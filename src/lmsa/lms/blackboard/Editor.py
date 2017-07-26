@@ -4,8 +4,8 @@ import time
 
 class Editor(BlackBoard):
 
-    DUE_DATE_VALUE =
-    DUE_DATE_TIME =
+    DUE_DATE_VALUE = 'dp_dueDate_date'
+    DUE_DATE_TIME = 'tp_dueDate_time'
     CANCEL =
     SUBMIT =
 
@@ -15,8 +15,8 @@ class Editor(BlackBoard):
 
     def due_date(self, date, wait = None):
         try:
-            self.driver.find_element_by_id('dp_dueDate_date').clear()
-            self.driver.find_element_by_id('dp_dueDate_date').send_keys(date)
+            self.driver.find_element_by_xpath(Editor.DUE_DATE_VALUE).clear()
+            self.driver.find_element_by_xpath(Editor.DUE_DATE_VALUE).send_keys(date)
             time.sleep(wait)
         except Exception as e:
             return False
@@ -24,8 +24,8 @@ class Editor(BlackBoard):
 
     def due_date_time(self, time, wait = None):
         try:
-            driver.find_element_by_id('tp_dueDate_time').clear()
-            driver.find_element_by_id('tp_dueDate_time').send_keys(time)
+            driver.find_element_by_xpath(Editor.DUE_DATE_TIME).clear()
+            driver.find_element_by_xpath(Editor.DUE_DATE_TIME).send_keys(time)
             time.sleep(wait)
         except Exception as e:
             return False
@@ -33,14 +33,14 @@ class Editor(BlackBoard):
 
     def cancel(self, wait = None):
         try:
-            self.driver.find_element_by_name('bottom_Cancel').click()
+            self.driver.find_element_by_name(Editor.CANCEL).click()
             time.sleep(wait)
         except Exception as e:
             pass
 
     def submit(self, wait = None):
         try:
-            self.driver.find_element_by_name('bottom_submit').click()
+            self.driver.find_element_by_name(Editor.SUBMIT).click()
             time.sleep(wait)
         except Exception as e:
             pass
