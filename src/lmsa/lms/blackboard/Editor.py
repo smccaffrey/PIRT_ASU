@@ -49,13 +49,15 @@ class Editor(BlackBoard):
 class TestOptions(Editor):
 
     EDIT_TEST_OPTIONS = '//a[@title="Edit the Test Options"]'
-    START_RESTRICT_CHECK =
-    START_RESTRICT_DATE =
-    START_RESTRICT_TIME =
-    END_RESTRICT_CHECK =
-    END_RESTRICT_DATE =
-    END_RESTRICT_TIME =
-    LATE_SUBMISSION_CHECK =
+    START_RESTRICT_CHECK = '//*[@id="start_restrict"]'
+    START_RESTRICT_DATE = '//*[@id="dp_restrict_start_date"]'
+    START_RESTRICT_TIME = '//*[@id="tp_restrict_start_time"]'
+    END_RESTRICT_CHECK = '//*[@id="end_restrict"]'
+    END_RESTRICT_DATE = '//*[@id="dp_restrict_end_date"]'
+    END_RESTRICT_TIME = '//*[@id="tp_restrict_end_time"]'
+    DUE_DATE_CHECK = '//*[@id="_dueDate"]'
+    DUE_DATE_DATE = ''
+    LATE_SUBMISSION_CHECK = '//*[@id="doNotAllowLateSubmission"]'
 
 
     def __init__(self):
