@@ -4,6 +4,11 @@ import time
 
 class Editor(BlackBoard):
 
+    DUE_DATE_VALUE =
+    DUE_DATE_TIME =
+    CANCEL =
+    SUBMIT =
+
     def __init__(self, driver):
         #need to check to see if this passes our driver in
         super(Editor, self).__init__(driver)
@@ -43,6 +48,16 @@ class Editor(BlackBoard):
 
 class TestOptions(Editor):
 
+    EDIT_TEST_OPTIONS = '//a[@title="Edit the Test Options"]'
+    START_RESTRICT_CHECK =
+    START_RESTRICT_DATE =
+    START_RESTRICT_TIME =
+    END_RESTRICT_CHECK =
+    END_RESTRICT_DATE =
+    END_RESTRICT_TIME =
+    LATE_SUBMISSION_CHECK =
+
+
     def __init__(self):
         return
 
@@ -63,7 +78,7 @@ class TestOptions(Editor):
             If None, does nothing.
         """
         try:
-            self.driver.find_element_by_xpath('//a[@title="Edit the Test Options"]').click()
+            self.driver.find_element_by_xpath(TestOptions.EDIT_TEST_OPTIONS).click()
             time.sleep(wait)
         except Exception as e:
             return False
@@ -120,12 +135,11 @@ class TestOptions(Editor):
 
 class AssignmentOptions(Editor):
 
-    XPATHS = {
-        'POINTS_POSSIBLE':'//*[@id="possible"]'
-        'MAKE_ASSIGNMENT_AVAILABLE':'//*[@id="isAvailable"]',
-        'START_LIMIT_AVAILABILITY':'//*[@id="start_limitAvailability"]',
-        'END_LIMIT_AVAILABILITY':'//*[@id="end_limitAvailability"]',
-        'TRACK_NUMBER_OF_VIEWS':'//*[@id="isTracked"]'}
+    POINTS_POSSIBLE = '//*[@id="possible"]'
+    MAKE_ASSIGNMENT_AVAILABLE = '//*[@id="isAvailable"]'
+    START_LIMIT_AVAILABILITY = '//*[@id="start_limitAvailability"]'
+    END_LIMIT_AVAILABILITY = '//*[@id="end_limitAvailability"]'
+    TRACK_NUMBER_OF_VIEWS = '//*[@id="isTracked"]'
 
     def __init__(self):
         return
