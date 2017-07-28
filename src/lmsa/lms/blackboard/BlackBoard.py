@@ -1,6 +1,7 @@
 from lmsa.lms import LMS
 from bs4 import BeautifulSoup
 from lmsa.lms.blackboard import Course
+from lmsa.lms.blackboard import Editor
 from urlparse import urljoin
 import time
 
