@@ -8,15 +8,13 @@ It can currently handle all content management and information editing tasks.
 
 What things you need to install the software and how to install them
 
-```
-[BlackBoard Learn](http://www.blackboard.com/learning-management-system/blackboard-learn.aspx)
-```
+* [BlackBoard Learn](http://www.blackboard.com/learning-management-system/blackboard-learn.aspx)
+
 
 ### Current Integrated Dual-Factor Authentication
 
-```
-[Duo](https://duo.com/product)
-```
+* [Duo](https://duo.com/product)
+
 
 
 ## Built With
@@ -30,9 +28,10 @@ Currently under private development
 
 ## Authors
 
-* **Sam McCaffrey** - *Project Lead* - [smccaffrey](https://github.com/smccaffrey)
-* **Ian Kenney**    - ** [ianmkenney](https://github.com/ianmkenney)
-* **Andrew Adams**  - ** [Faux53](https://github.com/Faux53)
+* **Sam McCaffrey** - *title/role* - [smccaffrey](https://github.com/smccaffrey)
+* **Ian Kenney**    - *title/role* [ianmkenney](https://github.com/ianmkenney)
+* **Andrew Adams**  - *title/role* [Faux53](https://github.com/Faux53)
+
 See also the list of [contributors](https://github.com/smccaffrey/blackboard_automation/graphs/contributors) who participated in this project.
 
 ## License
