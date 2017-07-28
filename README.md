@@ -29,8 +29,8 @@ Currently under private development
 ## Authors
 
 * **Sam McCaffrey** - *title/role* - [smccaffrey](https://github.com/smccaffrey)
-* **Ian Kenney**    - *title/role* [ianmkenney](https://github.com/ianmkenney)
-* **Andrew Adams**  - *title/role* [Faux53](https://github.com/Faux53)
+* **Ian Kenney**    - *title/role* - [ianmkenney](https://github.com/ianmkenney)
+* **Andrew Adams**  - *title/role* - [Faux53](https://github.com/Faux53)
 
 See also the list of [contributors](https://github.com/smccaffrey/blackboard_automation/graphs/contributors) who participated in this project.
 
