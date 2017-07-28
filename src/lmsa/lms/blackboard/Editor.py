@@ -4,7 +4,12 @@ import time
 
 class Editor(BlackBoard):
 
-    #edit_test_options()
+    def __init__(self, driver):
+        self.driver = driver
+        #need to check to see if this passes our driver in
+        #super(Editor, self).__init__(driver)
+        #edit_test_options()
+
     EDIT_TEST_OPTIONS = '//a[@title="Edit the Test Options"]'
 
     #edit_assignment_options()
@@ -13,9 +18,7 @@ class Editor(BlackBoard):
     CANCEL = '//*[@id="bottom_submitButtonRow"]/input[1]'
     SUBMIT = '//*[@id="bottom_submitButtonRow"]/input[2]'
 
-    def __init__(self, driver):
-        #need to check to see if this passes our driver in
-        super(Editor, self).__init__(driver)
+
 
     def form_selector(self, element):
         try:
@@ -52,7 +55,7 @@ class Editor(BlackBoard):
             self.driver.find_element_by_xpath(xpath).click()
             return True
         return False
-        
+
     def cancel(self, wait = None):
         try:
             self.driver.find_element_by_xpath(Editor.CANCEL).click()
@@ -71,7 +74,11 @@ class Editor(BlackBoard):
 
 
 class TestOptions(Editor):
-
+    """
+    All options for editing 'Tests' on BlackBoard Learn.
+    Time.sleep() doesn't need to be called during these functions as all options
+    will be executed on a single form each time.
+    """
     #open_test_new_window()
     OPEN_TEST_IN_NEW_WINDOW_YES = '//*[@id="yesRadio"]'
     OPEN_TEST_IN_NEW_WINDOW_NO = '//*[@id="noRadio"]'
@@ -144,8 +151,13 @@ class TestOptions(Editor):
     def end_restrict(self):
         return
 
-    def due_date(self):
-        return
+    def due_date(self, state, date, time):
+        current_state = self.check_state(TestOptions.DUE_DATE_CHECK)
+        if state != current_state:
+            self.toggle_state(TestOptions.DUE_DATE_CHECK)
+        if current_state:
+            self.driver.find_element_by_xpath(TestOptions.DUE_DATE_VALUE).send_keys(date)
+            self.driver.find_element_by_xpath(TestOptions.DUE_DATE_TIME).send_keys(time)
 
     def late_submission(self):
         return
